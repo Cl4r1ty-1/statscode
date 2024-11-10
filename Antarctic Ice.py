@@ -11,7 +11,6 @@ b = y1 - m * x1
 
 # Load the data
 time_data = pd.read_csv("time.csv")
-# Convert the 'Year' column to datetime format if necessary
 time_data['Year'] = time_data['Year'].astype(int)
 
 # Generate x values within the range of the data for plotting the line of best fit
@@ -24,6 +23,7 @@ plt.figure(figsize=(10, 6))
 plt.plot(time_data['Year'], time_data['Ice Mass Change'], label='Change', color='blue')
 
 # Plot the line of best fit
+plt.plot(x_values, line_of_best_fit, color='red', linestyle='--', label='Line of Best Fit (by eye)')
 
 # Customize the plot
 plt.xlabel("Year")
